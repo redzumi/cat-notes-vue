@@ -1,11 +1,9 @@
 import Vue from 'vue';
 
+import App from './components/App';
+
 new Vue({
   el: '#app',
-  data: {
-    foo: 'bar'
-  },
-  created() {
-    console.log('Foo is: ' + this.foo);
-  }
+  template: '<App/>',
+  components: { App }
 });
