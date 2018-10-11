@@ -1,7 +1,8 @@
 <template>
   <div id="app">
-    <span>Counter: </span>
-    <SimpleCounter/>
+    <b-container>
+      <SimpleCounter/>
+    </b-container>
   </div>
 </template>
 

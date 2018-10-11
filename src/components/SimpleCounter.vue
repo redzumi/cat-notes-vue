@@ -1,5 +1,8 @@
 <template>
-  <button v-on:click="count++">Current counter value — {{ count }}</button>
+  <b-row class="justify-content-md-center counter-row">
+    <b-button variant="primary" v-on:click="count++">
+      Current counter value — {{ count }}</b-button>
+  </b-row>
 </template>
 
 <script>
@@ -12,3 +15,9 @@
     }
   }
 </script>
+
+<style>
+  .counter-row {
+    padding: 16px;
+  }
+</style>
