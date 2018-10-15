@@ -1,8 +1,8 @@
 <template>
-  <b-row class="justify-content-md-center counter-row">
-    <b-button variant="primary" v-on:click="count++">
-      Current counter value — {{ count }}</b-button>
-  </b-row>
+  <div class="counter-row">
+    <md-button class="md-raised" v-on:click="count++">
+      Current counter value — {{ count }}</md-button>
+  </div>
 </template>
 
 <script>

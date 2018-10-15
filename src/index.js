@@ -1,9 +1,9 @@
 import Vue from 'vue';
-import BootstrapVue from 'bootstrap-vue';
+import VueMaterial from 'vue-material';
 
 import App from './components/App';
 
-Vue.use(BootstrapVue);
+Vue.use(VueMaterial);
 
 new Vue({
   el: '#app',

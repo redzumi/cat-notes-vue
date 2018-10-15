@@ -1,8 +1,8 @@
 <template>
   <div id="app">
-    <b-container>
+    <md-content>
       <SimpleCounter/>
-    </b-container>
+    </md-content>
   </div>
 </template>
 
