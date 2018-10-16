@@ -18,3 +18,10 @@
     name: 'page-drawer'
   }
 </script>
+
+<style lang="stylus">
+  .header
+    &__drawer
+      width 240px
+      color #707070
+</style>

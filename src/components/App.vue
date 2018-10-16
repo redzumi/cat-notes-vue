@@ -2,7 +2,7 @@
   <div id="app">
     <md-app>
   
-      <md-app-toolbar class="header__toolbar md-medium md-primary">
+      <md-app-toolbar class="header__toolbar md-medium md-primary md-elevation-1">
         <page-toolbar/>
       </md-app-toolbar>
   
