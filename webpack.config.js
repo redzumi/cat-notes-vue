@@ -33,6 +33,10 @@ module.exports = {
       {
         test: /\.css$/,
         use: ['vue-style-loader', 'css-loader']
+      },
+      {
+        test: /\.styl|stylus$/,
+        use: ['vue-style-loader', 'css-loader', 'stylus-loader']
       }
     ]
   },
