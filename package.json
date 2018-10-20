@@ -1,5 +1,5 @@
 {
-  "name": "cat-note",
+  "name": "cat-notes-vue",
   "version": "1.0.0",
   "description": "Simple notes manager",
   "main": "index.js",

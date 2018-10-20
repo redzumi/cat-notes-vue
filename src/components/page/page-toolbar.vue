@@ -1,5 +1,5 @@
 <template>
-  <span class="md-title">Cat-Note</span>
+  <span class="md-title">Cat-Notes</span>
 </template>
 
 <script>
