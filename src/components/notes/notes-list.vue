@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="notes-list">
     <md-list>
       <md-list-item>Plain Text</md-list-item>
       <md-list-item @click="alert">Button</md-list-item>
@@ -20,3 +20,8 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  .notes-list
+    background #eeeeee
+</style>
