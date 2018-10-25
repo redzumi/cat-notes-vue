@@ -1,8 +1,8 @@
 <template>
-  <div class="note">
+  <div class="note" v-if="currentNote === null">
     <md-card>
       <md-card-header>
-        <div class="md-title">Card without hover effect</div>
+        <div class="md-title">Add new note</div>
       </md-card-header>
   
       <md-field>
@@ -20,11 +20,22 @@
       </md-card-actions>
     </md-card>
   </div>
+  <div class="note" v-else>
+    <md-card>
+      <md-card-header>
+        <div class="md-title">{{ currentNote.title }}</div>
+      </md-card-header>
+      <md-card-content>
+        {{ currentNote.body }}
+      </md-card-content>
+    </md-card>
+  </div>
 </template>
 
 <script>
   import {
-    mapActions
+    mapActions,
+    mapGetters
   } from 'vuex'
   
   export default {
@@ -33,6 +44,11 @@
       title: '',
       body: '',
     }),
+    computed: {
+      ...mapGetters('notes', {
+        currentNote: 'currentNote',
+      })
+    },
     methods: {
       ...mapActions('notes', [
         'addNote'

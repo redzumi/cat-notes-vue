@@ -1,10 +1,11 @@
 <template>
   <div class="notes-list">
     <md-list>
-      <md-list-item v-for="note in notes" :key="note.id" @click="showNote">
+      <md-list-item v-for="note in notes" :key="note.id" @click="showNote(note)">
         {{ note.title }}
       </md-list-item>
     </md-list>
+    <md-button class="md-primary" @click="addNewNote">Add new note</md-button>
   </div>
 </template>
 
@@ -26,8 +27,8 @@
       ...mapActions('notes', [
         'showNote'
       ]),
-      alert() {
-        window.alert('...')
+      addNewNote() {
+        this.showNote(null)
       }
     }
   }

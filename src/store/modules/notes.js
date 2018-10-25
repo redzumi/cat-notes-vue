@@ -2,11 +2,16 @@ import db from '../../api/db';
 
 // initial state
 const state = {
-  list: []
+  list: [],
+  currentNote: null
 };
 
 // getters
-const getters = {};
+const getters = {
+  currentNote: state => {
+    return state.currentNote;
+  }
+};
 
 // why commit???
 const actions = {
@@ -17,6 +22,9 @@ const actions = {
     db.getNotes(notes => {
       commit('setNotes', notes);
     });
+  },
+  showNote({ commit }, note) {
+    commit('showNote', note);
   }
 };
 
@@ -26,6 +34,9 @@ const mutations = {
   },
   setNotes(state, notes) {
     state.list = notes;
+  },
+  showNote(state, note) {
+    state.currentNote = note;
   }
 };
 
