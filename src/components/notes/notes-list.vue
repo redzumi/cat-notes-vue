@@ -1,7 +1,7 @@
 <template>
   <div class="notes-list">
     <md-list>
-      <md-list-item v-for="note in notes" :key="note.id" @click="alert">
+      <md-list-item v-for="note in notes" :key="note.id" @click="showNote">
         {{ note.title }}
       </md-list-item>
     </md-list>
@@ -23,6 +23,9 @@
       this.$store.dispatch('notes/getNotes')
     },
     methods: {
+      ...mapActions('notes', [
+        'showNote'
+      ]),
       alert() {
         window.alert('...')
       }
