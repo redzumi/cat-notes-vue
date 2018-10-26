@@ -13,12 +13,6 @@
   </div>
 </template>
 
-<script>
-  export default {
-    name: 'page-drawer'
-  }
-</script>
-
 <style lang="stylus">
   .header
     &__drawer

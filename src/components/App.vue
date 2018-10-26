@@ -3,15 +3,15 @@
     <md-app>
   
       <md-app-toolbar class="header__toolbar md-medium md-primary md-elevation-1">
-        <page-toolbar/>
+        <Toolbar/>
       </md-app-toolbar>
   
-      <md-app-drawer md-permanent="full" class="header__drawer">
-        <page-drawer/>
-      </md-app-drawer>
+      <!-- <md-app-drawer md-permanent="full" class="header__drawer">
+        <Drawer/>
+      </md-app-drawer> -->
   
       <md-app-content class="content">
-        <page-content/>
+        <Content/>
       </md-app-content>
   
     </md-app>
@@ -19,15 +19,15 @@
 </template>
 
 <script>
-  import PageToolbar from './page/page-toolbar'
-  import PageDrawer from './page/page-drawer'
-  import PageContent from './page/page-content'
+  import Toolbar from './layout/Toolbar'
+  import Drawer from './layout/Drawer'
+  import Content from './layout/Content'
   export default {
     name: 'App',
     components: {
-      PageToolbar,
-      PageDrawer,
-      PageContent,
+      Toolbar,
+      Drawer,
+      Content,
     }
   }
 </script>

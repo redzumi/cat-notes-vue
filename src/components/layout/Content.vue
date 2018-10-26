@@ -1,17 +1,14 @@
 <template>
   <div class="page-content">
-    <!-- <md-empty-state md-icon="devices_other" md-label="Cat Notes" md-description="Nothing here...">
-        </md-empty-state> -->
-    <notes-list/>
-    <note />
+    <NotesList/>
+    <Note />
   </div>
 </template>
 
 <script>
-  import NotesList from '../notes/notes-list'
-  import Note from '../notes/note'
+  import NotesList from '../notes/NotesList'
+  import Note from '../notes/Note'
   export default {
-    name: 'page-content',
     components: {
       NotesList,
       Note,

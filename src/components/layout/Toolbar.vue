@@ -2,12 +2,6 @@
   <span class="md-title">Cat-Notes</span>
 </template>
 
-<script>
-  export default {
-    name: 'page-toolbar'
-  }
-</script>
-
 <style lang="stylus">
   .header
     &__toolbar

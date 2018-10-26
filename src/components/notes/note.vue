@@ -39,7 +39,6 @@
   } from 'vuex'
   
   export default {
-    name: 'note',
     data: () => ({
       title: '',
       body: '',

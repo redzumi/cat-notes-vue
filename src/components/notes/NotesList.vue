@@ -16,10 +16,11 @@
   } from 'vuex'
   
   export default {
-    name: 'notes-list',
-    computed: mapState({
-      notes: state => state.notes.list
-    }),
+    computed: {
+      ...mapState({
+        notes: state => state.notes.list
+      })
+    },
     created() {
       this.$store.dispatch('notes/getNotes')
     },
