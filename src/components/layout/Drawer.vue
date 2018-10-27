@@ -1,15 +1,22 @@
 <template>
   <div>
-    <md-toolbar class="md-transparent" md-elevation="0">
+    <v-toolbar flat>
       Navigation
-    </md-toolbar>
+    </v-toolbar>
   
-    <md-list>
-      <md-list-item>
-        <md-icon>move_to_inbox</md-icon>
-        <span class="md-list-item-text">Test</span>
-      </md-list-item>
-    </md-list>
+    <v-divider></v-divider>
+  
+    <v-list dense class="pt-0">
+      <v-list-tile>
+        <v-list-tile-action>
+          <v-icon>dashboard</v-icon>
+        </v-list-tile-action>
+  
+        <v-list-tile-content>
+          <v-list-tile-title>Test</v-list-tile-title>
+        </v-list-tile-content>
+      </v-list-tile>
+    </v-list>
   </div>
 </template>
 

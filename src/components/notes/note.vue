@@ -1,35 +1,26 @@
 <template>
-  <div class="note" v-if="currentNote === null">
-    <md-card>
-      <md-card-header>
-        <div class="md-title">Add new note</div>
-      </md-card-header>
+  <v-card v-if="currentNote === null" class="note elevation-12">
+    <v-card-title primary-title>
+      <h3 class="headline mb-0">Add new note</h3>
+    </v-card-title>
   
-      <md-field>
-        <label>Title</label>
-        <md-input v-model="title"></md-input>
-      </md-field>
+    <v-card-text>
+      <v-text-field v-model="title" label="Title" required></v-text-field>
+      <v-textarea v-model="body" label="Body"></v-textarea>
+    </v-card-text>
   
-      <md-field>
-        <label>Body</label>
-        <md-textarea v-model="body"></md-textarea>
-      </md-field>
-  
-      <md-card-actions>
-        <md-button @click="submitNote">Добавить</md-button>
-      </md-card-actions>
-    </md-card>
-  </div>
-  <div class="note" v-else>
-    <md-card>
-      <md-card-header>
-        <div class="md-title">{{ currentNote.title }}</div>
-      </md-card-header>
-      <md-card-content>
-        {{ currentNote.body }}
-      </md-card-content>
-    </md-card>
-  </div>
+    <v-card-actions>
+      <v-btn flat color="orange" @click="submitNote">Добавить</v-btn>
+    </v-card-actions>
+  </v-card>
+  <v-card class="note" v-else>
+    <v-card-title primary-title>
+      <h3 class="headline mb-0">{{ currentNote.title }}</h3>
+    </v-card-title>
+    <v-card-text>
+      {{ currentNote.body }}
+    </v-card-text>
+  </v-card>
 </template>
 
 <script>
@@ -64,7 +55,9 @@
 </script>
 
 <style lang="stylus">
-.note
-  width 60%
-  background #e7e7e7
+  .note
+    padding 16px
+    margin 16px
+    margin-top 32px
+    background #e7e7e7
 </style>

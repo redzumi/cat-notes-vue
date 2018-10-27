@@ -1,7 +1,11 @@
 <template>
   <div class="page-content">
     <NotesList/>
-    <Note />
+    <v-layout>
+      <v-flex xs12 justify-center>
+        <Note />
+      </v-flex>
+    </v-layout>
   </div>
 </template>
 
@@ -17,11 +21,9 @@
 </script>
 
 <style lang="stylus">
-  .md-app-content
-    padding 0
-
   .page-content
     display flex
+    height 100%
     background #e7e7e7
 </style>
 

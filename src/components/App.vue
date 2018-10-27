@@ -1,20 +1,20 @@
 <template>
   <div id="app">
-    <md-app>
+    <v-app>
   
-      <md-app-toolbar class="header__toolbar md-medium md-primary md-elevation-1">
+      <v-toolbar app class="header__toolbar">
         <Toolbar/>
-      </md-app-toolbar>
+      </v-toolbar>
   
-      <!-- <md-app-drawer md-permanent="full" class="header__drawer">
+      <!-- <v-navigation-drawer permanent absolute>
         <Drawer/>
-      </md-app-drawer> -->
+      </v-navigation-drawer> -->
   
-      <md-app-content class="content">
+      <v-content class="content">
         <Content/>
-      </md-app-content>
+      </v-content>
   
-    </md-app>
+    </v-app>
   </div>
 </template>
 

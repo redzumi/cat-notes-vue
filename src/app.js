@@ -1,11 +1,11 @@
 import Vue from 'vue';
-import VueMaterial from 'vue-material';
+import Vuetify from 'vuetify';
 
 import App from './components/App';
 
 import store from './store';
 
-Vue.use(VueMaterial);
+Vue.use(Vuetify);
 
 new Vue({
   el: '#app',
