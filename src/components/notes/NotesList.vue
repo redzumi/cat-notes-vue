@@ -28,7 +28,7 @@
   export default {
     computed: {
       ...mapState({
-        notes: state => state.notes.list
+        notes: state => state.notes.list.reverse()
       }),
       ...mapGetters('notes', {
         currentNote: 'currentNote',
@@ -53,7 +53,6 @@
     position relative
     width 40%
     padding 16px
-    margin-top 32px
     max-height 80vh
     min-height 80vh
     overflow auto

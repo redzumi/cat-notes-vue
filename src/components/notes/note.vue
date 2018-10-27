@@ -10,7 +10,7 @@
     </v-card-text>
   
     <v-card-actions>
-      <v-btn flat color="orange" @click="submitNote">Добавить</v-btn>
+      <v-btn flat color="blue" @click="submitNote">Добавить</v-btn>
     </v-card-actions>
   </v-card>
   <v-card class="note" v-else>
@@ -57,7 +57,4 @@
 <style lang="stylus">
   .note
     padding 16px
-    margin 16px
-    margin-top 32px
-    background #e7e7e7
 </style>

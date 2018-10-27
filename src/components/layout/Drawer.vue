@@ -1,11 +1,9 @@
 <template>
-  <div>
+  <v-navigation-drawer app permanent absolute>
     <v-toolbar flat>
       Navigation
     </v-toolbar>
-  
     <v-divider></v-divider>
-  
     <v-list dense class="pt-0">
       <v-list-tile>
         <v-list-tile-action>
@@ -17,7 +15,7 @@
         </v-list-tile-content>
       </v-list-tile>
     </v-list>
-  </div>
+  </v-navigation-drawer>
 </template>
 
 <style lang="stylus">

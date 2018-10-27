@@ -1,7 +1,7 @@
 <template>
   <div class="page-content">
     <NotesList/>
-    <v-layout>
+    <v-layout class="note">
       <v-flex xs12 justify-center>
         <Note />
       </v-flex>
@@ -21,9 +21,11 @@
 </script>
 
 <style lang="stylus">
+  .note
+    background darken(#fff, 15%)
   .page-content
     display flex
     height 100%
-    background #e7e7e7
+    background darken(#fff, 10%)
 </style>
 

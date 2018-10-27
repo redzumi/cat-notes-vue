@@ -5,10 +5,8 @@
       <v-toolbar app class="header__toolbar">
         <Toolbar/>
       </v-toolbar>
-  
-      <!-- <v-navigation-drawer permanent absolute>
+
         <Drawer/>
-      </v-navigation-drawer> -->
   
       <v-content class="content">
         <Content/>
