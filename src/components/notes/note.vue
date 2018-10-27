@@ -64,8 +64,7 @@
 </script>
 
 <style lang="stylus">
-.note {
-  width 100%
+.note
+  width 60%
   background #e7e7e7
-}
 </style>

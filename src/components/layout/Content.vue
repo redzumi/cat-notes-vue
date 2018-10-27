@@ -23,6 +23,5 @@
   .page-content
     display flex
     background #e7e7e7
-    min-height 100%
 </style>
 

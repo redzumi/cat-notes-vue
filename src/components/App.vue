@@ -31,3 +31,9 @@
     }
   }
 </script>
+
+<style lang="stylus">
+  body
+    height 100%
+    background #e7e7e7
+</style>
