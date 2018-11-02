@@ -8,14 +8,13 @@ module.exports = {
   entry: [
     path.resolve(__dirname, 'src', 'vendors.js'),
     path.resolve(__dirname, 'src', 'app.js'),
-    '@babel/polyfill'
   ],
   output: {
     path: path.resolve(__dirname, 'build'),
     filename: 'bundle.js'
   },
   resolve: {
-    extensions: ['.json', '.js', '.vue'],
+    extensions: ['.ts', '.js', '.vue', '.json'],
     alias: {
       vue: 'vue/dist/vue.js'
     }
@@ -27,8 +26,12 @@ module.exports = {
         loader: 'vue-loader'
       },
       {
-        test: /\.js$/,
-        loader: 'babel-loader'
+        test: /\.tsx?$/,
+        loader: 'ts-loader',
+        exclude: /node_modules/,
+        options: {
+          appendTsSuffixTo: [/\.vue$/]
+        }
       },
       {
         test: /\.css$/,
@@ -51,5 +54,8 @@ module.exports = {
     contentBase: path.resolve(__dirname, 'build'),
     compress: true,
     disableHostCheck: true
+  },
+  performance: {
+    hints: false
   }
 };
