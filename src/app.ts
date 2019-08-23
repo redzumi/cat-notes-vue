@@ -3,6 +3,7 @@ import Vuetify from 'vuetify';
 
 import App from './components/App';
 
+// @ts-ignore
 import store from './store';
 
 Vue.use(Vuetify);
