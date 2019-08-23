@@ -1,4 +1,11 @@
-import db from '../../api/db';
+// @ts-ignore
+import { db } from '../../api/db';
+import Note from '../../components/notes/Note';
+
+type State = {
+  list: Array<Note>;
+  currentNote: Note;
+};
 
 // initial state
 const state = {
@@ -8,34 +15,38 @@ const state = {
 
 // getters
 const getters = {
-  currentNote: state => {
+  currentNote: (state: State) => {
     return state.currentNote;
   }
 };
 
 // why commit???
 const actions = {
-  addNote({ commit }, note) {
+  // @ts-ignore
+  addNote({ commit }, note: Note) {
     commit('addNote', note);
   },
+  // @ts-ignore
   getNotes({ commit }) {
-    db.getNotes(notes => {
+    // @ts-ignore
+    db.getNotes((notes: Array<Note>) => {
       commit('setNotes', notes);
     });
   },
-  showNote({ commit }, note) {
+  // @ts-ignore
+  showNote({ commit }, note: Note) {
     commit('showNote', note);
   }
 };
 
 const mutations = {
-  addNote(state, note) {
+  addNote(state: State, note: Note) {
     state.list.push(note);
   },
-  setNotes(state, notes) {
+  setNotes(state: State, notes: Array<Note>) {
     state.list = notes;
   },
-  showNote(state, note) {
+  showNote(state: State, note: Note) {
     state.currentNote = note;
   }
 };
