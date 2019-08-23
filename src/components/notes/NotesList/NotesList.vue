@@ -18,35 +18,7 @@
   </section>
 </template>
 
-<script>
-  import {
-    mapState,
-    mapGetters,
-    mapActions
-  } from 'vuex'
-  
-  export default {
-    computed: {
-      ...mapState({
-        notes: state => state.notes.list.reverse()
-      }),
-      ...mapGetters('notes', {
-        currentNote: 'currentNote',
-      })
-    },
-    created() {
-      this.$store.dispatch('notes/getNotes')
-    },
-    methods: {
-      ...mapActions('notes', [
-        'showNote'
-      ]),
-      addNewNote() {
-        this.showNote(null)
-      }
-    }
-  }
-</script>
+<script lang="ts" src="./NotesList.ts"></script>
 
 <style lang="stylus">
   .notes-list
