@@ -1,14 +1,4 @@
-type DB = {
-  getNotes: (callback: () => void) => void;
-};
-
-type Note = {
-  id: number;
-  title: string;
-  body: string;
-};
-
-type Notes = Array<Note>;
+import { Note, Notes } from '../types/Note';
 
 const notes: Notes = [
   { id: 1, title: 'Test note 1', body: 'Oh god NOTE 1' },
@@ -16,9 +6,23 @@ const notes: Notes = [
   { id: 3, title: 'Test note 3', body: 'Oh god NOTE 3' }
 ];
 
-export const db: DB = {
-  // callback, srsly?
-  getNotes(callback: (notes: Array<Note>) => void) {
-    callback(notes);
-  }
+const getNotes = (callback: (notes: Notes) => void) => {
+  callback(notes);
+  console.log('Notes got');
+};
+
+const addNote = (note: Note, callback: (note: Note) => void) => {
+  callback(note);
+  console.log('Note added');
+};
+
+const removeNote = (note: Note, callback: (note: Note) => void) => {
+  callback(note);
+  console.log('Note removed');
+};
+
+export const db = {
+  getNotes,
+  addNote,
+  removeNote
 };

@@ -1,14 +1,12 @@
-import Vue from 'vue';
-import Vuetify from 'vuetify';
+import Toolbar from './components/Layout/Toolbar';
+import Drawer from './components/Layout/Drawer';
+import Content from './components/Layout/Content';
 
-import App from './components/App';
-
-import store from './store';
-
-Vue.use(Vuetify);
-
-new Vue({
-  el: '#app',
-  store: store,
-  render: h => h(App)
-});
+export default {
+  name: 'App',
+  components: {
+    Toolbar,
+    Drawer,
+    Content
+  }
+};

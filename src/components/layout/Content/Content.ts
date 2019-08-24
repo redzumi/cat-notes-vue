@@ -1,5 +1,6 @@
-import NotesList from '../../notes/NotesList';
-import Note from '../../notes/Note';
+import NotesList from '../../Notes/NotesList';
+import Note from '../../Notes/Note';
+
 export default {
   components: {
     NotesList,

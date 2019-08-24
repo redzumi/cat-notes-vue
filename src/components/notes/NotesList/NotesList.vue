@@ -6,7 +6,7 @@
       </v-btn>
     </div>
     <div v-for="note in notes" :key="note.id" class="notes-list__item" @click="showNote(note)">
-      <v-card v-bind:class="{ 'elevation-12': currentNote === note }">
+      <v-card v-bind:class="{ 'elevation-12': current === note }">
         <v-card-title primary-title>
           <h3 class="headline mb-0">{{ note.title }}</h3>
         </v-card-title>

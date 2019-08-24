@@ -1,5 +1,5 @@
 <template>
-  <v-card v-if="currentNote === null" class="note elevation-12">
+  <v-card v-if="current === null" class="note elevation-12">
     <v-card-title primary-title>
       <h3 class="headline mb-0">Add new note</h3>
     </v-card-title>
@@ -15,9 +15,9 @@
   </v-card>
   <v-card class="note" v-else>
     <v-card-title primary-title>
-      <h3 class="headline mb-0">{{ currentNote.title }}</h3>
+      <h3 class="headline mb-0">{{ current.title }}</h3>
     </v-card-title>
-    <v-card-text>{{ currentNote.body }}</v-card-text>
+    <v-card-text>{{ current.body }}</v-card-text>
   </v-card>
 </template>
 

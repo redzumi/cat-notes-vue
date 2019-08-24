@@ -1,53 +1,51 @@
-// @ts-ignore
 import { db } from '../../api/db';
-import Note from '../../components/notes/Note';
+import { Note, Notes } from '../../types/Note';
 
 type State = {
-  list: Array<Note>;
-  currentNote: Note;
+  all: Notes;
+  current: Note | null;
 };
 
-// initial state
-const state = {
-  list: [],
-  currentNote: null
+const state: State = {
+  all: [],
+  current: null
 };
 
-// getters
 const getters = {
-  currentNote: (state: State) => {
-    return state.currentNote;
+  current: (state: State) => {
+    return state.current;
   }
 };
 
-// why commit???
+// TODO: WARNING разобраться с типами для action
 const actions = {
-  // @ts-ignore
-  addNote({ commit }, note: Note) {
-    commit('addNote', note);
+  addNote(action: any, note: Note) {
+    const { commit } = action;
+    db.addNote(note, (note: Note) => {
+      commit('addNote', note);
+    });
   },
-  // @ts-ignore
-  getNotes({ commit }) {
-    // @ts-ignore
+  getNotes(action: any) {
+    const { commit } = action;
     db.getNotes((notes: Array<Note>) => {
       commit('setNotes', notes);
     });
   },
-  // @ts-ignore
-  showNote({ commit }, note: Note) {
+  showNote(action: any, note: Note) {
+    const { commit } = action;
     commit('showNote', note);
   }
 };
 
 const mutations = {
   addNote(state: State, note: Note) {
-    state.list.push(note);
+    state.all.push(note);
   },
   setNotes(state: State, notes: Array<Note>) {
-    state.list = notes;
+    state.all = notes;
   },
   showNote(state: State, note: Note) {
-    state.currentNote = note;
+    state.current = note;
   }
 };
 

@@ -4,10 +4,10 @@ export default {
   computed: {
     ...mapState({
       // @ts-ignore
-      notes: state => state.notes.list.reverse()
+      notes: state => state.notes.all.reverse()
     }),
     ...mapGetters('notes', {
-      currentNote: 'currentNote'
+      current: 'current'
     })
   },
   created() {

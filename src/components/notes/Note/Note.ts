@@ -7,7 +7,7 @@ export default {
   }),
   computed: {
     ...mapGetters('notes', {
-      currentNote: 'currentNote'
+      current: 'current'
     })
   },
   methods: {
