@@ -1,7 +1,11 @@
 import { db } from '../../api/db';
-import { Note, Notes } from '../../types/Note';
 
-type State = {
+import { ActionTree, ActionContext, GetterTree, MutationTree } from 'vuex';
+
+import { Note, Notes } from '../../types/Note';
+import { RootState } from '../types';
+
+export type State = {
   all: Notes;
   current: Note | null;
 };
@@ -11,33 +15,32 @@ const state: State = {
   current: null
 };
 
-const getters = {
+const getters: GetterTree<State, RootState> = {
   current: (state: State) => {
     return state.current;
   }
 };
 
-// TODO: WARNING разобраться с типами для action
-const actions = {
-  addNote(action: any, note: Note) {
+const actions: ActionTree<State, RootState> = {
+  addNote(action: ActionContext<State, RootState>, note: Note) {
     const { commit } = action;
     db.addNote(note, (note: Note) => {
       commit('addNote', note);
     });
   },
-  getNotes(action: any) {
+  getNotes(action: ActionContext<State, RootState>) {
     const { commit } = action;
     db.getNotes((notes: Array<Note>) => {
       commit('setNotes', notes);
     });
   },
-  showNote(action: any, note: Note) {
+  showNote(action: ActionContext<State, RootState>, note: Note) {
     const { commit } = action;
     commit('showNote', note);
   }
 };
 
-const mutations = {
+const mutations: MutationTree<State> = {
   addNote(state: State, note: Note) {
     state.all.push(note);
   },
